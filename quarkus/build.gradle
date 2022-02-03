@@ -9,8 +9,10 @@ repositories {
 
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-    implementation 'io.quarkus:quarkus-resteasy-jackson'
-    implementation 'io.quarkus:quarkus-websockets-client'
+    implementation 'io.quarkus:quarkus-resteasy-reactive-jackson'
+    //implementation 'io.quarkus:quarkus-resteasy-jackson'
+    implementation 'org.javamoney:moneta:1.4.2'
+    implementation 'org.zalando:jackson-datatype-money:1.2.1'
 }
 
 
