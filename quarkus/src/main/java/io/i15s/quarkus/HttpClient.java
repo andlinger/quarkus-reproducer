@@ -6,9 +6,9 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 @RegisterRestClient
-@Path("/get")
-public interface VisibleHttpClient {
+public interface HttpClient {
 
     @GET
+    @Path("/get")
     String get();
 }
