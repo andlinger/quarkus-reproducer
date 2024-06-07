@@ -14,7 +14,9 @@ dependencies {
 
     implementation(enforcedPlatform("$quarkusPlatformGroupId:$quarkusPlatformArtifactId:$quarkusPlatformVersion"))
     implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
-    implementation("io.quarkus:quarkus-websockets-next")
+    implementation("io.quarkus:quarkus-messaging-mqtt")
+
+    testImplementation("io.quarkus:quarkus-junit5")
 }
 
 
