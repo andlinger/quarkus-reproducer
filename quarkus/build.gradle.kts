@@ -14,9 +14,10 @@ dependencies {
 
     implementation(enforcedPlatform("$quarkusPlatformGroupId:$quarkusPlatformArtifactId:$quarkusPlatformVersion"))
     implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
-    implementation("io.quarkus:quarkus-messaging-mqtt")
+    implementation("io.quarkus:quarkus-mongodb-panache")
 
     testImplementation("io.quarkus:quarkus-junit5")
+    testImplementation("io.rest-assured:rest-assured:5.5.0")
 }
 
 

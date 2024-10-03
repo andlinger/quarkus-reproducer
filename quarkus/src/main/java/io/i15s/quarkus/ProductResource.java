@@ -1,19 +1,18 @@
 package io.i15s.quarkus;
 
 import jakarta.enterprise.context.RequestScoped;
-import jakarta.inject.Inject;
-import jakarta.ws.rs.POST;
+import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import org.bson.types.ObjectId;
 
 @Path("/v1/products")
 @RequestScoped
 public class ProductResource {
 
-    @Inject
-    ProductService service;
-
-    @POST
-    public void create() {
-        service.produce();
+    @GET
+    public Product get() {
+        var product = new Product();
+        product.setId(new ObjectId("66fe4c9df58b4c036cc92298"));
+        return product;
     }
 }
