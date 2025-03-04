@@ -1,16 +1,43 @@
 package io.i15s.quarkus;
 
-import org.bson.types.ObjectId;
+import jakarta.validation.constraints.AssertTrue;
+import jakarta.validation.constraints.NotBlank;
+
+import java.time.LocalDate;
 
 public class Product {
 
-    private ObjectId id;
+    @NotBlank(message = "Name must not be blank")
+    private String name;
+    private LocalDate produced;
+    private LocalDate sold;
 
-    public ObjectId getId() {
-        return id;
+    @AssertTrue(message = "Produced must be before sold")
+    public boolean producedBeforeSold() {
+        return produced.isBefore(sold);
     }
 
-    public void setId(ObjectId id) {
-        this.id = id;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public LocalDate getProduced() {
+        return produced;
+    }
+
+    public void setProduced(LocalDate produced) {
+        this.produced = produced;
+    }
+
+    public LocalDate getSold() {
+        return sold;
+    }
+
+    public void setSold(LocalDate sold) {
+        this.sold = sold;
     }
 }
