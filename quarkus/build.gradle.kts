@@ -13,7 +13,7 @@ dependencies {
     val quarkusPlatformVersion: String by project
 
     implementation(enforcedPlatform("$quarkusPlatformGroupId:$quarkusPlatformArtifactId:$quarkusPlatformVersion"))
-    implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
+    implementation("io.quarkus:quarkus-rest-jackson")
     implementation("io.quarkus:quarkus-hibernate-validator")
 
     testImplementation("io.quarkus:quarkus-junit5")
