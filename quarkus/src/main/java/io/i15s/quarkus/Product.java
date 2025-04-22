@@ -1,6 +1,5 @@
 package io.i15s.quarkus;
 
-import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDate;
@@ -9,13 +8,9 @@ public class Product {
 
     @NotBlank(message = "Name must not be blank")
     private String name;
+    private Float price;
     private LocalDate produced;
     private LocalDate sold;
-
-    @AssertTrue(message = "Produced must be before sold")
-    public boolean producedBeforeSold() {
-        return produced.isBefore(sold);
-    }
 
     public String getName() {
         return name;
@@ -39,5 +34,13 @@ public class Product {
 
     public void setSold(LocalDate sold) {
         this.sold = sold;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
     }
 }

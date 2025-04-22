@@ -14,13 +14,14 @@ public class ProductResourceTest {
                 {
                     "name": "",
                     "produced": "2025-03-10",
-                    "sold": "2025-03-01"
+                    "sold": "2025-03-01",
+                    "price": 1.1
                 }
                 """;
 
         RestAssured.given()
                 .log()
-                .ifValidationFails()
+                .all()
                 .body(body)
                 .contentType("application/json")
                 .post("/v1/products")
@@ -31,17 +32,18 @@ public class ProductResourceTest {
                 {
                     "name": "Product",
                     "produced": "2025-03-10",
-                    "sold": "2025-03-01"
+                    "sold": "2025-03-01",
+                    "price": 1.1
                 }
                 """;
 
         RestAssured.given()
                 .log()
-                .ifValidationFails()
+                .all()
                 .body(body)
                 .contentType("application/json")
                 .post("/v1/products")
                 .then()
-                .statusCode(400);
+                .statusCode(204);
     }
 }
